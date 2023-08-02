@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        scaffoldBackgroundColor: Colors.grey[900],
+        scaffoldBackgroundColor: Colors.black,
       ),
       home: BottomNavBarProvider(),
       debugShowCheckedModeBanner: false,
@@ -35,6 +35,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// This class is created for the bottom navigation bar.
+// it allows you to keep the navigation bar always displayed
+// on every screen/page.
 class BottomNavBarProvider extends StatefulWidget {
   const BottomNavBarProvider({super.key});
 
@@ -97,7 +100,8 @@ class _BottomNavBarProviderState extends State<BottomNavBarProvider> {
         },
         
         // ⁡⁢⁢⁢Navigation bar background color⁡
-        backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         //=========================================
       ),
       
