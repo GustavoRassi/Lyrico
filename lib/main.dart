@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:spotify_app/Pages/home_page.dart';
 import 'package:spotify_app/Pages/search_page.dart';
 import 'package:spotify_app/Pages/yourlibrary_page.dart';
@@ -58,53 +59,59 @@ class _BottomNavBarProviderState extends State<BottomNavBarProvider> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    // AnnotatedRegion() allows to access the system UI overlay, which is the
+    // status bar at the top between the notch.
+    return AnnotatedRegion(
+      child: Scaffold(
       // Body will show the selected screen from the list
-      body: _screen[selected_index],
-      //=========================================
-      // ⁡⁢⁢⁢BOTTOM NAVIGATION BAR⁡
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selected_index,
-        unselectedItemColor: Colors.white,
-        
-        // Selected item will turn font to bold.
-        selectedLabelStyle: TextStyle(
-          fontWeight: FontWeight.bold
-        ),
-        selectedItemColor: Colors.white,
-
-        // ⁡⁢⁢List of the items of the navigation bar⁡.
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search_rounded),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.library_music),
-            label: "Your Library",
-          )
-        ],
-
-        // This block of code executes when the user taps on any of the items
-        // on the navigation bar. '⁡⁣⁢onTap' assigns the input value to '_index' as
-        // the parameter and it's used in the inner code to set the value of⁡
-        // '⁡⁣⁢selected_index⁡', which will be later set to the selected index.
-        onTap: (index_) {
-          setState(() {
-            selected_index = index_;
-          });
-        },
-        
-        // ⁡⁢⁢⁢Navigation bar background color⁡
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        body: _screen[selected_index],
         //=========================================
+        // ⁡⁢⁢⁢BOTTOM NAVIGATION BAR⁡
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selected_index,
+          unselectedItemColor: Colors.white,
+          
+          // Selected item will turn font to bold.
+          selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold
+          ),
+          selectedItemColor: Colors.white,
+
+          // ⁡⁢⁢List of the items of the navigation bar⁡.
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home"
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search_rounded),
+              label: "Search",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.library_music),
+              label: "Your Library",
+            )
+          ],
+
+          // This block of code executes when the user taps on any of the items
+          // on the navigation bar. '⁡⁣⁢onTap' assigns the input value to '_index' as
+          // the parameter and it's used in the inner code to set the value of⁡
+          // '⁡⁣⁢selected_index⁡', which will be later set to the selected index.
+          onTap: (index_) {
+            setState(() {
+              selected_index = index_;
+            });
+          },
+          
+          // ⁡⁢⁢⁢Navigation bar background color⁡
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          //=========================================
+        ),
+        
       ),
-      
+      // This attribute changes the color fo the text of the status bar to white.
+      value: SystemUiOverlayStyle.light
     );
   }
 }
