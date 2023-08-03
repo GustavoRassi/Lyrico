@@ -75,7 +75,7 @@ class _Home_pageState extends State<Home_page> {
                   TagWidget(tag_name: "Podcasts & Shows"),
                   TagWidget(tag_name: "Audiobooks")
                 ]
-              )
+              ),
             ],
           ),
         ),
