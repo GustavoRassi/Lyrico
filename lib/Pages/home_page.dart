@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_app/Utilities/playlist.dart';
+import 'package:spotify_app/Utilities/playlistcard_widget.dart';
 import 'package:spotify_app/Utilities/tag.dart';
 
 class Home_page extends StatefulWidget {
@@ -76,6 +78,106 @@ class _Home_pageState extends State<Home_page> {
                   TagWidget(tag_name: "Audiobooks")
                 ]
               ),
+              SizedBox(height: 25),
+              // 3rd index
+              // Elements:
+              // - Table of the most listened playlists (up to a 3x2 table of playlists)
+              Table(
+                children: [
+                  TableRow(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      )
+                    ]
+                  ),
+                  TableRow(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      )
+                    ]
+                  ),
+                  TableRow(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Playlist_widget(
+                          image: 'lib/Images/austin-cover-1.png',
+                          playlist_name: 'Post Malone',
+                        ),
+                      )
+                    ]
+                  ),
+                ],
+              ),
+              SizedBox(height: 25),
+              // ⁡⁢⁢⁢4th⁡ index
+              // Elements:
+              // - Music sections/categories (eg. Your Top Mixes, etc.)
+              Text(
+                // Music section title
+                'Your Top Mixes',
+                style: TextStyle(
+                  fontSize: 21,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+                )
+              ),
+              // List of playlists created by the app, based on user's interests
+              Container(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    PlaylistCard_widget(
+                      playlist_description: 'Post Malone, 6ix9ine, Khelani and more',
+                      playlist_image: 'lib/Images/austin-cover-1.png'
+                    ),
+                    PlaylistCard_widget(
+                      playlist_description: 'Post Malone, 6ix9ine, Khelani and more',
+                      playlist_image: 'lib/Images/austin-cover-1.png'
+                    ),
+                    PlaylistCard_widget(
+                      playlist_description: 'Post Malone, 6ix9ine, Khelani and more',
+                      playlist_image: 'lib/Images/austin-cover-1.png'
+                    ),
+                    PlaylistCard_widget(
+                      playlist_description: 'Post Malone, 6ix9ine, Khelani and more',
+                      playlist_image: 'lib/Images/austin-cover-1.png'
+                    )
+                  ]
+                ),
+                height: 245
+              )
             ],
           ),
         ),

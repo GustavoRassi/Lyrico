@@ -29,7 +29,7 @@ class TagWidget extends StatelessWidget {
           // Set border radius and color of container
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.grey[900]
+            color: Colors.grey[850]
           )
         ),
         
