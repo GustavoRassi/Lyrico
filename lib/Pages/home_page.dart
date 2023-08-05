@@ -79,11 +79,12 @@ class _Home_pageState extends State<Home_page> {
                 ]
               ),
               SizedBox(height: 25),
-              // 3rd index
+              // ⁡⁢⁢⁢3rd⁡ index
               // Elements:
               // - Table of the most listened playlists (up to a 3x2 table of playlists)
               Table(
                 children: [
+                  // 1st row
                   TableRow(
                     children: [
                       Padding(
@@ -102,6 +103,7 @@ class _Home_pageState extends State<Home_page> {
                       )
                     ]
                   ),
+                  // 2nd row
                   TableRow(
                     children: [
                       Padding(
@@ -120,6 +122,7 @@ class _Home_pageState extends State<Home_page> {
                       )
                     ]
                   ),
+                  // 3rd row
                   TableRow(
                     children: [
                       Padding(
